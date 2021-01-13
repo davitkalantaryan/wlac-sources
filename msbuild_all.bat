@@ -39,12 +39,13 @@ for %%x in (%*) do (
 echo action=%ActionConfirm%,platform=%PlatformTarget%,configuration=%Configuration%
 
 
-msbuild %scriptDirectory%prj\rfc\remote_function_call_false_without_lib_vs\remote_function_call_false_without_lib.sln /t:!ActionConfirm! /p:Configuration=!Configuration! /p:Platform=!PlatformTarget!
-msbuild %scriptDirectory%prj\rfc\rfc_vs\rfc.sln /t:!ActionConfirm! /p:Configuration=!Configuration! /p:Platform=!PlatformTarget!
-msbuild %scriptDirectory%prj\wlac\wlac_vs\wlac.sln /t:!ActionConfirm! /p:Configuration=!Configuration! /p:Platform=!PlatformTarget!
-msbuild %scriptDirectory%prj\usergroupid\usergroupid_vs\usergroupid.sln /t:!ActionConfirm! /p:Configuration=!Configuration! /p:Platform=!PlatformTarget!
+rem msbuild %scriptDirectory%prj\rfc\remote_function_call_false_without_lib_vs\remote_function_call_false_without_lib.sln /t:!ActionConfirm! /p:Configuration=!Configuration! /p:Platform=!PlatformTarget!
+rem msbuild %scriptDirectory%prj\rfc\rfc_vs\rfc.sln /t:!ActionConfirm! /p:Configuration=!Configuration! /p:Platform=!PlatformTarget!
+rem msbuild %scriptDirectory%prj\wlac\wlac_vs\wlac.sln /t:!ActionConfirm! /p:Configuration=!Configuration! /p:Platform=!PlatformTarget!
+rem msbuild %scriptDirectory%prj\usergroupid\usergroupid_vs\usergroupid.sln /t:!ActionConfirm! /p:Configuration=!Configuration! /p:Platform=!PlatformTarget!
+msbuild %scriptDirectory%\workspaces\wlac-all_vs\wlac-all.sln /t:!ActionConfirm! /p:Configuration=!Configuration! /p:Platform=!PlatformTarget!
 
-exit /b 0
+exit /b !ERRORLEVEL!
 
 :parse_argument
 	set isNextArgPlatform=true
